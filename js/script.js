@@ -20,13 +20,27 @@ async function callApi (){
                 break;
             }
 
-            container.innerHTML += `<p>Team Name: <strong>${data[i].teamName}</strong></p>`;
+            container.innerHTML += `
+            <div class="card">
+                Name: <strong>${data[i].teamName}</strong>
+                <br>
+                City: <strong>${data[i].location}</strong>
+            </div>`;
         }
 
     }catch(error){
-        console.log("Feilmelding: " +error)
+        container.innerHTML = `<div class="error">Something went wrong:  ${error}</div> `
     }
 
 }
 
 callApi();
+
+
+
+
+
+
+
+
+
